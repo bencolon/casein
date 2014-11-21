@@ -1,0 +1,94 @@
+fr:
+  global:
+    cancel: "Annuler"
+
+  controllers:
+    users:
+      users: "Utilisateurs"
+      add: "Ajouter un nouvel utilisateur"
+      email_sent: "Un email a été envoyé à %{name} avec les détails du compte"
+      create_error: "Il y a eu un problème pendant la création du nouvel utilisateur"
+      view: " > Voir l'utiliateur"
+      update: " > Modifier l'utilisateur"
+      updated: "%{name} a été mis à jour"
+      update_error: "Il y a eu un problème pendant la mise à jour du nouvel utilisateur"
+      update_password: " > Modifier le mot de passe"
+      blank_password: "Le nouveau mot de passe ne peut pas être vide"
+      password_changed: "Votre mot de passe a été modifié"
+      password_update_problems: "Il y a eu un problème pendant la mise à jour de votre mot de passe"
+      password_incorrect: "Le mote de passe actuel n'est pas correct"
+      reset_password: " > Regénération du mot de passe"
+      password_reset: "Votre mot de passe a été regénéré"
+      password_reset_for: "Le mot de passe a été regénéré et %{name} a été notifié par email"
+      password_reset_problems: "Il y a eu un problème pendant la regénération du mot passe de l'utilisateur"
+      deleted: "L'utilisateur %{name} a été supprimé"
+    casein:
+      welcome: "Bienvenu"
+    passwords:
+      multiple_accounts: "Plusieurs comptes ont été trouvé. Des emails ont été envoyés à %{email} avec les instructions pour la regénération des mots de passe"
+      email_sent: "Un email a été envoyé à %{email} avec les instructions pour la regénération du mot de passe."
+      no_user: "Il n'y a pas d'utilisateur avec cet email"
+      empty_field: "Un champ a été laissé libre"
+      updated: "Le mot de passe a bien été mis à jour"
+      not_located: "Votre compte ne peut pas être localisé. Essayer de copier/coller l'URL directement depuis l'email."
+
+  helpers:
+    casein:
+      footer_version: "Propulsé par %{link} %{version}, un project open-source."
+      footer_no_version: "Propulsé pas %{link}, un project open-source."
+      admin: "Administrateur"
+      user: "Utilisateur"
+      unknown: "Inconnu"
+      pagination: " <small class='pagination-details'>/ page %{current_page} sur %{total_pages}</small>"
+
+  mailers:
+    casein:
+      global:
+        dear: "Cher %{name},"
+        username: "Login:"
+        new_password: "Nouveau mot de passe :"
+        from: "Envoyé par"
+      new_password:
+        title: "[%{website_name}] Nouveau mot de passe"
+        reset: "Votre mot de passe a été regénérer par un administrateur pour votre compte : "
+      new_user_account:
+        title: "[%{website_name}] Nouvel utilisateur"
+        created: "Un nouveau compte a été crée pour vous ici : "
+      password_reset:
+        title: "[%{website_name}] Instructions pour la regénération du mot de passe"
+        request: "Une demande de regénération de mot de passe pour l'utilisateur %{login} a été faite."
+        ignore: "Si vous n'avez pas fait cette demande, ignorer simplement cet email."
+        otherwise: "Sinon cliquer le lien ci-dessous pour la regénération : "
+
+  views:
+    casein:
+      admin:
+        email: "Votre addresse email"
+        users: "Utilisateurs"
+        username: "Login"
+        name: "Nom"
+        role: "Rôle"
+        want_delete: "Etes vous certain de vouloir supprimer le compte %{name} ?"
+        warning: "\n\nATTENTION : C'est votre compte. Vous serez déconnecté si vous faites ça."
+        add_user: "%{icon}Ajouter un nouvel utilisateur"
+        password: "Mot de passe"
+        new_password: "Nouveau mot de passe"
+        repeat_password: "Répéter le mot passe"
+        current_password: "Mot de passe actuel"
+        repeat_new_password: "Répéter le nouveau mot de passe"
+        add_user_button: "Ajouter un nouvel utilisateur"
+        back_to_list: "%{icon}Retour à la liste"
+        generate: "Regénérer un mot de passe"
+      casein:
+        welcome: "Bienvenu sur Casein"
+        ready: "Vous êtes prêt à coder et customiser !"
+        remove_screen: "Pour supprimer cet écran, modifier <code>casein_config_dashboard_url</code>"
+        readme: "Voir le README sur GitHub"
+      passwords:
+        new_password: "Nouveau mot de passe"
+        confirm_password: "Confirmer le mot de passe"
+    layouts:
+      hello: "Bonjour %{name}"
+      profile: "Profil"
+      users: "Utilisateurs"
+      sign_out: "Déconnexion"

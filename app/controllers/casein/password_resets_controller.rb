@@ -1,11 +1,11 @@
 module Casein
   class PasswordResetsController < Casein::CaseinController
-  
+
     skip_before_filter :authorise
     before_filter :load_user_using_perishable_token, :only => [:edit, :update]
 
     layout 'casein_auth'
-    
+
     def create
       users = Casein::AdminUser.where(:email => params[:recover_email]).all
 
@@ -15,12 +15,12 @@ module Casein
         end
 
         if users.length > 1
-          flash[:notice] = "Multiple accounts were found. Emails have been sent to " + params[:recover_email] + " with instructions on how to reset your passwords"
+          flash[:notice] = I18n.t("controllers.passwords.multiple_accounts", :email => params[:recover_email])
         else
-          flash[:notice] = "An email has been sent to " + params[:recover_email] + " with instructions on how to reset your password"
+          flash[:notice] = I18n.t("controllers.passwords.email_sent", :email => params[:recover_email])
         end
       else
-        flash[:warning] = "There is no user with that email"
+        flash[:warning] = I18n.t("controllers.passwords.no_user")
       end
 
       redirect_to new_casein_admin_user_session_url
@@ -31,32 +31,32 @@ module Casein
     end
 
     def update
-      
+
       if params[:casein_admin_user][:password].empty? || params[:casein_admin_user][:password_confirmation].empty?
-        flash.now[:warning] = "A field has been left empty"
+        flash.now[:warning] = I18n.t("controllers.passwords.empty_field")
       else
-      
+
         @reset_user.password = params[:casein_admin_user][:password]
         @reset_user.password_confirmation = params[:casein_admin_user][:password_confirmation]
-      
+
         if @reset_user.save
-          flash[:notice] = "Password successfully updated"
+          flash[:notice] = I18n.t("controllers.passwords.updated")
           redirect_to new_casein_admin_user_session_url
           return
         end
       end
-      
+
       render :action => :edit
     end
 
   private
-    
+
     def load_user_using_perishable_token
-      
+
       @reset_user = Casein::AdminUser.find_using_perishable_token params[:token]
-      
+
       unless @reset_user
-        flash[:warning] = "Your account could not be located. Try to copy and paste the URL directly from the email."
+        flash[:warning] = I18n.t("controllers.passwords.not_located")
         redirect_to new_casein_admin_user_session_url
       end
     end

@@ -4,7 +4,7 @@
 
 	<div class="row">
   		<div class="col-lg-6">
-			<%= casein_text_field form, @casein_admin_user, :login, {:size => 30, :casein_label => "Username"} %>
+			<%= casein_text_field form, @casein_admin_user, :login, {:size => 30, :casein_label => t('views.casein.admin.username')} %>
 		</div>
 		<div class="col-lg-6">
 			<%= casein_text_field form, @casein_admin_user, :name %>
@@ -23,7 +23,7 @@
 
 	<div class="row">
   		<div class="col-lg-6">
-			<%= casein_select form, @casein_admin_user, :access_level, casein_get_access_level_array, {:casein_label => "Role"} %>
+			<%= casein_select form, @casein_admin_user, :access_level, casein_get_access_level_array, {:casein_label => t('views.casein.admin.role')} %>
 		</div>
 		<div class="col-lg-6">
 		</div>
@@ -31,27 +31,27 @@
 
 	<div class="row">
   		<div class="col-lg-6">
-			<%= casein_password_field form, @casein_admin_user, :password, {:casein_label => "Password"} %>
+			<%= casein_password_field form, @casein_admin_user, :password, {:casein_label => t('views.casein.admin.password')} %>
 		</div>
 		<div class="col-lg-6">
-			<%= casein_password_field form, @casein_admin_user, :password_confirmation, {:casein_label => "Repeat password"} %>
+			<%= casein_password_field form, @casein_admin_user, :password_confirmation, {:casein_label => t('views.casein.admin.repeat_password')} %>
 		</div>
 		<div class="col-lg-12 password-checkbox">
 			<div class="checkbox">
 	      		<label>
-	      			<%= check_box_tag :generate_random_password, "1", false, {:id => 'generate-random-password-checkbox'} %> Generate random password
+	      			<%= check_box_tag :generate_random_password, "1", false, {:id => 'generate-random-password-checkbox'} %> <%= t('views.casein.admin.generate') %>
 	      		</label>
 	    	</div>
 	    </div>
 	</div>
 
 	<p class="submits">
-		<%= link_to 'Cancel', casein_admin_users_path, :class => 'btn btn-mini btn-danger' %>
-		<%= form.submit "Add new user", :class => "btn btn-mini btn-primary" %>
+		<%= link_to t('global.cancel'), casein_admin_users_path, :class => 'btn btn-mini btn-danger' %>
+		<%= form.submit t('views.casein.admin.add_user_button'), :class => "btn btn-mini btn-primary" %>
 	</p>
 
 <% end %>
 
 <%= content_for :sidebar do %>
-  <li><%= link_to "#{casein_show_icon('th-list')}Back to list".html_safe, casein_admin_users_path %></li>
+  <li><%= link_to t('views.casein.admin.back_to_list', :icon => casein_show_icon('th-list')).html_safe, casein_admin_users_path %></li>
 <% end %>

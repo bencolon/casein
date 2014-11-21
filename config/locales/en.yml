@@ -1,0 +1,95 @@
+en:
+  global:
+    cancel: "Cancel"
+
+  controllers:
+    users:
+      users: "Users"
+      add: "Add a new user"
+      email_sent: "An email has been sent to %{name} with the new account details"
+      create_error: "There were problems when trying to create a new user"
+      view: " > View user"
+      update: " > Update user"
+      updated: "%{name} has been updated"
+      update_error: "There were problems when trying to update this user"
+      update_password: " > Update password"
+      blank_password: "New password cannot be blank"
+      password_changed: "Your password has been changed"
+      password_update_problems: "There were problems when trying to change your password"
+      password_incorrect: "The current password is incorrect"
+      reset_password: " > Reset password"
+      password_reset: "Your password has been reset"
+      password_reset_for: "Password has been reset and %{name} has been notified by email"
+      password_reset_problems: There were problems when trying to reset this user's password"
+      deleted: "%{name} has been deleted"
+    casein:
+      welcome: "Welcome"
+    passwords:
+      multiple_accounts: "Multiple accounts were found. Emails have been sent to %{email} with instructions on how to reset your passwords"
+      email_sent: "An email has been sent to %{email} with instructions on how to reset your password"
+      no_user: "There is no user with that email"
+      empty_field: "A field has been left empty"
+      updated: "Password successfully updated"
+      not_located: "Your account could not be located. Try to copy and paste the URL directly from the email."
+
+  helpers:
+    casein:
+      footer_version: "Running on %{link} %{version}, an open-source project."
+      footer_no_version: "Running on %{link}, an open-source project."
+      admin: "Administrator"
+      user: "User"
+      unknown: "Unknown"
+      pagination: " <small class='pagination-details'>/ page %{current_page} of %{total_pages}</small>"
+
+  mailers:
+    casein:
+      global:
+        dear: "Dear %{name},"
+        username: "Username:"
+        new_password: "New password:"
+        from: "From"
+      new_password:
+        title: "[%{website_name}] New password"
+        reset: "Your password has been reset by an administrator for your account at:"
+      new_user_account:
+        title: "[%{website_name}] New user account"
+        created: "A new user account has been created for you at:"
+      password_reset:
+        title: "[%{website_name}] Password reset instructions"
+        request: "A request to reset the password for username %{login} has been made."
+        ignore: "If you did not make this request, simply ignore this email."
+        otherwise: "Otherwise, click the link below to proceed:"
+
+  views:
+    casein:
+      admin:
+        email: "Your email address"
+        users: "Users"
+        username: "Username"
+        name: "Name"
+        role: "Role"
+        want_delete: "Are you sure you want to delete %{name}?"
+        warning: "\n\nWARNING: This is your user account. You will be signed out if you proceed."
+        add_user: "%{icon}Add a new user"
+        password: "Password"
+        new_password: "New password"
+        repeat_password: "Repeat password"
+        current_password: "Current password"
+        repeat_new_password: "Repeat new password"
+        add_user_button: "Add new user"
+        back_to_list: "%{icon}Back to list"
+        generate: "Generate random password"
+      casein:
+        welcome: "Welcome to Casein"
+        ready: "You&rsquo;re ready to begin scaffolding and customizing!"
+        remove_screen: "To remove this screen, set <code>casein_config_dashboard_url</code>"
+        readme: "View README on GitHub"
+      passwords:
+        new_password: "New password"
+        confirm_password: "Confirm password"
+    layouts:
+      hello: "Hello %{name}"
+      profile: "Profile"
+      users: "Users"
+      sign_out: "Sign out"
+

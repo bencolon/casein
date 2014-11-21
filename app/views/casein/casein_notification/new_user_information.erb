@@ -1,12 +1,12 @@
-Dear <%= @name %>,<br />
+<%= t('mailers.casein.global.dear', :name => @name) %><br />
 <br />
-A new user account has been created for you at:<br />
+<%= t('mailers.casein.new_user_account.created') %><br />
 <br />
 <%= @host %>/casein<br />
 <br />
-Username: <%= @login %><br />
-Password: <%= @pass %><br />
+<%= t('mailers.casein.global.username') %> <%= @login %><br />
+<%= t('mailers.casein.global.new_password') %> <%= @pass %><br />
 <br />
-From<br />
+<%= t('mailers.casein.global.from') %><br />
 <br />
 <%= @from_text %>
